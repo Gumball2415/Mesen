@@ -94,7 +94,7 @@ ui: InteropDLL/$(OBJFOLDER)/$(SHAREDLIB)
 	rm -fr $(RELEASEFOLDER)/Dependencies/*
 	cd UpdateHelper && xbuild /property:Configuration="Release" /property:Platform="AnyCPU"
 	cp "bin/Any CPU/Release/MesenUpdater.exe" $(RELEASEFOLDER)/Dependencies/
-	cp -r GUI.NET/Dependencies/* $(RELEASEFOLDER)/Dependencies/
+	cp -r GUI.NET/Dependencies/* $(RELEASEFOLDER)/
 	cp InteropDLL/$(OBJFOLDER)/$(SHAREDLIB) $(RELEASEFOLDER)/Dependencies/$(SHAREDLIB)	
 	cd $(RELEASEFOLDER)/Dependencies && zip -r ../Dependencies.zip *	
 	cd GUI.NET && xbuild /property:Configuration="Release" /property:Platform="$(MESENPLATFORM)" /property:PreBuildEvent="" /property:DefineConstants="HIDETESTMENU,DISABLEAUTOUPDATE"
